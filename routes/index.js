@@ -5,18 +5,28 @@ const messages = [
   {
     text: "Hello!",
     user: "Tony",
-    added: new Date(),
+    added: new Date().toLocaleString(),
   },
   {
     text: "Hey there!",
     user: "Katie",
-    added: new Date(),
+    added: new Date().toLocaleString(),
   },
 ];
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Mini Messageboard", messages: messages });
+});
+
+router.post("/new", function (req, res, next) {
+  const message = req.body;
+  messages.push({
+    text: message.message,
+    user: message.author,
+    added: new Date().toLocaleString(),
+  });
+  res.redirect("/");
 });
 
 module.exports = router;

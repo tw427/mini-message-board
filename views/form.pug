@@ -1,8 +1,9 @@
 extends layout
 
 block content
+  a(href="/") Home
   h1= title
-    form(method="POST" action="/new")
-        input(type="text" placeholder="Author")
-        input(type="text" placeholder="Message")
-        button(class="form-submit" type="submit") Submit
+  form(method="POST" action="/new")
+    input(type="text" placeholder="Author" name="author")
+    input(type="text" placeholder="Message" name="message")
+    button(class="form-submit" type="submit") Submit

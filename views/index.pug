@@ -5,4 +5,5 @@ block content
   p Welcome to #{title}
   main
   each message in messages
-    p #{message.user}: #{message.text} posted on #{message.added}
+    p [#{message.added}] #{message.user}: #{message.text}
+  a(href="/new") New Message
