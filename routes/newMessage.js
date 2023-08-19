@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/new", function (req, res, next) {
-  res.send("New message!");
+  res.render("form", { title: "New Message Form" });
 });
 
 module.exports = router;
