@@ -16,7 +16,11 @@ const messages = [
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Mini Messageboard", messages: messages });
+  res.render("index", {
+    title: "Mini Messageboard",
+    messages: messages,
+    key: process.env.MONGODB_URI,
+  });
 });
 
 router.post("/new", function (req, res, next) {
